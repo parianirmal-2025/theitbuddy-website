@@ -7,32 +7,43 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{--bg:#f2f4f5;--surface:#fff;--surface2:#e8ecee;--border:rgba(0,0,0,.09);--accent:#00e5ff;--accent2:#7c3aed;--text:#0d1117;--muted:#556070;--font-display:"Plus Jakarta Sans",sans-serif;--font-body:"DM Sans",sans-serif;}
+:root{
+  --bg:#f2f4f5;--surface:#fff;--surface2:#e8ecee;
+  --border:rgba(0,0,0,.09);--accent:#00e5ff;--accent2:#7c3aed;
+  --text:#0d1117;--muted:#556070;
+  --font-display:"Plus Jakarta Sans",sans-serif;
+  --font-body:"DM Sans",sans-serif;
+}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.65;overflow-x:hidden;}
 a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
+/* NAV */
 nav{position:fixed;top:0;width:100%;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 5vw;background:rgba(242,244,245,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
 .logo{display:flex;align-items:center;}
 .nav-links{display:flex;gap:2rem;list-style:none;font-size:.9rem;font-weight:500;color:var(--muted);}
 .nav-links a{padding:.4rem .2rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
 .nav-links a:hover{color:var(--text);}
 .nav-links a.active{color:var(--text);border-bottom-color:var(--accent2);}
+/* HAMBURGER */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none;z-index:201;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s;}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+/* MOBILE MENU */
 .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(242,244,245,.98);backdrop-filter:blur(20px);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
 .mobile-menu.open{display:flex;}
 .mobile-menu a{font-family:var(--font-display);font-weight:700;font-size:1.8rem;color:var(--text);transition:color .2s;}
 .mobile-menu a:hover,.mobile-menu a.active{color:var(--accent2);}
 .mobile-menu-footer{position:absolute;bottom:2rem;font-size:.8rem;color:var(--muted);}
+/* CONTENT */
 .section-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:.7rem;}
 .section-title{font-family:var(--font-display);font-weight:800;font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.03em;line-height:1.1;}
 .section-sub{color:var(--muted);max-width:580px;margin-top:.9rem;font-size:1rem;}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
+/* CONTACT */
 .contact-wrap{max-width:960px;margin:0 auto;padding:7rem 5vw 5rem;}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem;align-items:start;}
 .contact-info h3{font-family:var(--font-display);font-weight:700;font-size:1.1rem;margin-bottom:1.4rem;}
@@ -65,7 +76,9 @@ nav{position:fixed;top:0;width:100%;z-index:200;display:flex;align-items:center;
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html" class="active">Contact</a></li>
   </ul>
-  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
@@ -74,6 +87,7 @@ nav{position:fixed;top:0;width:100%;z-index:200;display:flex;align-items:center;
   <a href="contact.html" class="active">Contact</a>
   <div class="mobile-menu-footer">2026 The IT Buddy FZE</div>
 </div>
+
 <div class="contact-wrap">
   <div class="reveal">
     <div class="section-label">Get In Touch</div>
@@ -84,27 +98,36 @@ nav{position:fixed;top:0;width:100%;z-index:200;display:flex;align-items:center;
     <div class="contact-info reveal">
       <h3>Contact Information</h3>
       <div class="contact-item">
-        <div class="ci-icon">&#x2709;</div>
-        <div><h4>Email Us</h4><a href="mailto:sales@theitbuddy.com">sales@theitbuddy.com</a></div>
+        <div class="ci-icon">&#9993;</div>
+        <div>
+          <h4>Email Us</h4>
+          <a class="eml" href="#">loading...</a>
+        </div>
       </div>
       <div class="contact-item">
-        <div class="ci-icon">&#x1F4CD;</div>
-        <div><h4>Location</h4><p>Business Center, SPCZ, Sharjah, United Arab Emirates</p></div>
+        <div class="ci-icon">&#128205;</div>
+        <div>
+          <h4>Location</h4>
+          <p>Business Center, SPCZ, Sharjah,<br>United Arab Emirates</p>
+        </div>
       </div>
     </div>
     <div class="cta-box reveal">
       <h2>Let us Start a Conversation</h2>
       <p>Whether you need managed IT services, cybersecurity, cloud migration, or strategic consulting - we are here to help.</p>
-      <a href="mailto:sales@theitbuddy.com" class="email-link">&#x2709; sales@theitbuddy.com</a>
+      <a class="email-link eml" href="#">&#9993; loading...</a>
     </div>
   </div>
 </div>
+
 <script>
+// Reveal animation
 document.querySelectorAll(".reveal").forEach(function(el){
   new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting) el.classList.add("visible"); });
   },{threshold:.1}).observe(el);
 });
+// Hamburger
 var ham=document.getElementById("hamburger");
 var menu=document.getElementById("mobileMenu");
 if(ham&&menu){
@@ -121,6 +144,14 @@ if(ham&&menu){
     });
   });
 }
+// Email - assembled by JS so no crawler/Cloudflare intercepts it
+
+var u='sales',d='theitbuddy.com',e=u+'@'+d;
+document.querySelectorAll('.eml').forEach(function(el){
+  if(el.tagName==='A'){el.href='mailto:'+e; el.textContent=e;}
+  else{el.textContent=e;}
+});
+
 </script>
 </body>
 </html>
